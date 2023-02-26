@@ -1,3 +1,3 @@
 # calculadora-churrasco
 
-Qualquer coisa.
+Coisa qualquer.
