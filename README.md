@@ -1,1 +1,3 @@
 # calculadora-churrasco
+
+Coisa qualquer.
