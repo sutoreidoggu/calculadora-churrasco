@@ -3,12 +3,10 @@ body {
   margin: 64px;
 }
 
-
 #calculadora {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 #elemento-central {
@@ -17,40 +15,55 @@ body {
   background: #FAFAFA;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 16px 0px 0px 16px;
-
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
 }
 
-#abas {
-  height: 64px;
+.abas {
   width: 256px;
   background-color: #E0C681;
   border-radius: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
+}
+
+.churrasco-de-carnes, .churrasco-vegetariano {
+  border: none;
+  padding: 0.75rem;
+  border-radius: 16px;
+  width: 6rem;
+  cursor: pointer;
+}
+
+.churrasco-de-carnes:hover, .churrasco-vegetariano:hover, .calcular:hover {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .churrasco-de-carnes {
   background-color: #F65854;
-
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .churrasco-vegetariano {
   background-color: #54f65f;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
-#classificacao {
-    height: 64px;
-    width: 450px;
-    background-color: #E0C681;
-    border-radius: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.classificacao {
+  width: 450px;
+  background-color: #E0C681;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+  padding: 1rem;
 }
 
 .selecao {
@@ -62,23 +75,28 @@ body {
   border-radius: 16px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
+  column-gap: 20%;
 }
 
-.carnes {
-  padding: 5em;
+.carne, .vegetal {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 2px;
 }
 
 .calcular {
-
   height: 64px;
   width: 256px;
   left: -85px;
   top: 322px;
   border-radius: 16px;
   background-color: #F65854;
+  border: none;
 }
 
 .resultado {
@@ -88,6 +106,3 @@ body {
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px 16px 16px 0px;
 }
-
-
-

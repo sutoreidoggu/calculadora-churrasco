@@ -7,52 +7,31 @@
   <body>
     <div class="calculadora" id="calculadora">
       <div class="elemento-central" id="elemento-central">
-        <div class="elemento-central abas" id="abas">
-            <button class="churrasco-de-carnes" id="churrasco-de-carnes">
-              Carnes
-            </button>            
-            <button class="churrasco-vegetariano" id="churrasco-vegetariano">
-            Vegetariano
-            </button>
+        <div class="abas">
+            <button class="churrasco-de-carnes" id="churrasco-de-carnes">Carnes</button>            
+            <button class="churrasco-vegetariano" id="churrasco-vegetariano">Vegetariano</button>
         </div>
-        <div class="elemento-central classificacao" id="classificacao">
-          <form class="quantidade" id="quantidade">
+        <div class="classificacao">
+          <div>
             <label for="quantidade-homem">Homens</label>
             <input type="number" id="quantidade-homem" name="quantidade-homem" min="1"  max="100">
+          </div>
+          <div>
             <label for="quantidade-mulher">Mulheres</label>
             <input type="number" id="quantidade-mulher" name="quantidade-mulher" min="1"  max="100">
+          </div>
+          <div>
             <label for="quantidade-crianca">Crianças</label>
             <input type="number" id="quantidade-crianca" name="quantidade-crianca" min="1"  max="100">
-          </form>
+          </div>
         </div>
-        <div class="elemento-central selecao" id="selecao">
-          <form class="carnes" id="carnes">
-            <input type="checkbox" class="carne 1" name="carne1">
-            Carne 1
-            <input type="checkbox" class="carne 2" name="carne2">
-            Carne 2
-            <input type="checkbox" class="carne 3" name="carne3">
-            Carne 3
-            <input type="checkbox" class="carne 4" name="carne4">
-            Carne 4
-            <input type="checkbox" class="carne 5" name="carne5">
-            Carne 5
-            <input type="checkbox" class="carne 6" name="carne6">
-            Carne 6
-            <input type="checkbox" class="carne 7" name="carne7">
-            Carne 7
-            <input type="checkbox" class="carne 8" name="carne8">
-            Carne 8          
-          </form>  
-        </div>
+        <div class="selecao"></div>
         <div>
-          <button type="button" class="elemento-central calcular" id="calcular">Calcular</button>
+          <button type="button" class="calcular" id="calcular">Calcular</button>
         </div>
       </div>
-      <div class="resultado" id="resultado">
-
-
-      </div>
+      <div class="resultado" id="resultado"></div>
     </div>
+    <script type="application/javascript" src="index.js"></script>
   </body>
 </html>
