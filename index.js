@@ -76,7 +76,6 @@ function createInputs(param) {
 }
 
 document.addEventListener('click', function (params) {
-    params.preventDefault()
     const botao = params.target.id
 
   switch (botao) {
