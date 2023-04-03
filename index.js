@@ -62,6 +62,7 @@ function createInputs(param) {
     input.type = 'checkbox'
     input.id = param.id
     input.name = param.name
+    input.className = param.class
 
     const label = document.createElement('label')
     label.htmlFor = param.id
@@ -74,6 +75,8 @@ function createInputs(param) {
 
     selecao.appendChild(container)
 }
+
+carnes.forEach((carne) => createInputs(carne))
 
 document.addEventListener('click', function (params) {
     const botao = params.target.id
@@ -101,3 +104,24 @@ document.addEventListener('click', function (params) {
         break;
   }
 })
+
+function butao() {
+    let carnesSelecionadas = []
+    let vegetaisSelecionados = []
+
+    document.querySelectorAll('input.carne').forEach((input) => {
+        if (input.checked) {
+            carnesSelecionadas.push(input.id);
+        } 
+    })
+
+    document.querySelectorAll('input.vegetal').forEach((input) => {
+        if (input.checked) {
+            vegetaisSelecionados.push(input.id);
+        }
+    })
+
+
+    console.log({carnesSelecionadas});
+    console.log({vegetaisSelecionados});
+}
