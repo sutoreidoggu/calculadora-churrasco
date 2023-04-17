@@ -3,6 +3,7 @@ console.log('ola mundo')
 const fundo = document.querySelector('body')
 const btnCalcular = document.querySelector('button#calcular')
 const selecao = document.querySelector('div.selecao')
+const resultadoFinal = document.getElementById('resultadoFinal')
 
 const carnes = [
     {
@@ -10,24 +11,28 @@ const carnes = [
         id: "carne1",
         class: "carne",
         name: "carne1",
+        weight: 1
     },
     {
         label: 'Carne 2',
         id: "carne2",
         class: "carne",
-        name: "carne2"
+        name: "carne2",
+        weight: 1
     },
     {
         label: 'Carne 3',
         id: "carne3",
         class: "carne",
-        name: "carne3"
+        name: "carne3",
+        weight: 1
     },
     {
         label: 'Carne 4',
         id: "carne4",
         class: "carne",
-        name: "carne4"
+        name: "carne4",
+        weight: 1
     }
 ]
 const vegetais = [
@@ -35,25 +40,29 @@ const vegetais = [
         label: 'Vegetal 1',
         id: "vegetal1",
         class: "vegetal",
-        name: "vegetal1"
+        name: "vegetal1",
+        weight: 1
     },
     {
         label: 'Vegetal 2',
         id: "vegetal2",
         class: "vegetal",
-        name: "vegetal2"
+        name: "vegetal2",
+        weight: 1
     },
     {
         label: 'Vegetal 3',
         id: "vegetal3",
         class: "vegetal",
-        name: "vegetal3"
+        name: "vegetal3",
+        weight: 1
     },
     {
         label: 'Vegetal 4',
         id: "vegetal4",
         class: "vegetal",
-        name: "vegetal4"
+        name: "vegetal4",
+        weight: 1
     }
 ]
 
@@ -63,6 +72,7 @@ function createInputs(param) {
     input.id = param.id
     input.name = param.name
     input.className = param.class
+    input.weight = param.weight
 
     const label = document.createElement('label')
     label.htmlFor = param.id
@@ -106,22 +116,27 @@ document.addEventListener('click', function (params) {
 })
 
 function butao() {
-    let carnesSelecionadas = []
-    let vegetaisSelecionados = []
+    let selecionados = []
 
     document.querySelectorAll('input.carne').forEach((input) => {
         if (input.checked) {
-            carnesSelecionadas.push(input.id);
+            selecionados.push(input.weight);
         } 
     })
 
     document.querySelectorAll('input.vegetal').forEach((input) => {
         if (input.checked) {
-            vegetaisSelecionados.push(input.id);
+            selecionados.push(input.weight);
         }
     })
 
+    let peso = selecionados.reduce((a, b) => {
+        return a + b;
+    })
 
-    console.log({carnesSelecionadas});
-    console.log({vegetaisSelecionados});
+    let resultado = 500 / peso 
+    
+    console.log(resultado);
+    resultadoFinal.innerHTML = resultado.toFixed(0) + " g"
+    
 }
