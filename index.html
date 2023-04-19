@@ -1,41 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>  
-    <title>Calculadora de Churrasco</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
-    <div class="calculadora" id="calculadora">
-      <div class="elemento-central" id="elemento-central">
-        <div class="abas">
-            <button class="churrasco-de-carnes" id="churrasco-de-carnes">Carnes</button>            
-            <button class="churrasco-vegetariano" id="churrasco-vegetariano">Vegetariano</button>
-        </div>
-        <div class="classificacao">
-          <div>
-            <label for="quantidade-homem">Homens</label>
-            <input type="number" id="quantidade-homem" name="quantidade-homem" min="1"  max="100">
-          </div>
-          <div>
-            <label for="quantidade-mulher">Mulheres</label>
-            <input type="number" id="quantidade-mulher" name="quantidade-mulher" min="1"  max="100">
-          </div>
-          <div>
-            <label for="quantidade-crianca">Crianças</label>
-            <input type="number" id="quantidade-crianca" name="quantidade-crianca" min="1"  max="100">
-          </div>
-        </div>
-        <div class="selecao"></div>
+
+<head>
+  <title>Calculadora de Churrasco</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div class="calculadora" id="calculadora">
+    <div class="elemento-central" id="elemento-central">
+      <div class="abas">
+        <button class="churrasco-de-carnes" id="churrasco-de-carnes">Carnes</button>
+        <button class="churrasco-vegetariano" id="churrasco-vegetariano">Vegetariano</button>
+      </div>
+      <div class="classificacao">
         <div>
-          <button type="submit" class="calcular" id="calcular" onclick="butao()">Calcular</button>
+          <label for="quantidade-homem">Homens</label>
+          <input type="number" id="quantidade-homem" name="quantidade-homem" min="0" max="100" value="0">
+        </div>
+        <div>
+          <label for="quantidade-mulher">Mulheres</label>
+          <input type="number" id="quantidade-mulher" name="quantidade-mulher" min="0" max="100" value="0">
+        </div>
+        <div>
+          <label for="quantidade-crianca">Crianças</label>
+          <input type="number" id="quantidade-crianca" name="quantidade-crianca" min="0" max="100" value="0">
         </div>
       </div>
-      <div class="resultado" id="resultado">
-        <div class="resultado-final" id="resultado-final">
-          <p>Resultado: </p><p type="number" id="resultadoFinal"></p>
-        </div>
+      <div class="selecao"></div>
+      <div>
+        <button type="submit" class="calcular" id="calcular" onclick="butao()">Calcular</button>
       </div>
     </div>
-    <script type="application/javascript" src="index.js"></script>
-  </body>
+    <div class="resultado" id="resultado">
+      <div class="resultado-final" id="resultado-final">
+        <p>Resultado: </p>
+        <p type="number" id="resultadoFinal"></p>
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript" src="index.js"></script>
+</body>
+
 </html>
