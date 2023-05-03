@@ -113,8 +113,11 @@ body {
 
 .resultado-final {
   display: flex;
-  justify-content: space-around;
-  margin-top: 95%;
+  align-items: center;
+  justify-content: center;
   font-size: 35px;
-  padding: 20%;
+}
+
+.resultado-final > p#resultadoFinal {
+  margin-left: 10px;
 }
