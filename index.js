@@ -10,25 +10,25 @@ const carnes = [
     label: "Carne 1",
     id: "carne1",
     name: "carne1",
-    weight: 0.8,
+    weight: 0.35,
   },
   {
     label: "Carne 2",
     id: "carne2",
     name: "carne2",
-    weight: 0.6,
+    weight: 0.2,
   },
   {
     label: "Carne 3",
     id: "carne3",
     name: "carne3",
-    weight: 0.45,
+    weight: 0.3,
   },
   {
     label: "Carne 4",
     id: "carne4",
     name: "carne4",
-    weight: 0.9,
+    weight: 0.15,
   },
 ];
 const vegetais = [
@@ -132,6 +132,25 @@ function calculoDePesoDasProteinas() {
   }, 0);
 }
 
+function proteinasSelecionadas() {
+  const selecionados = [];
+
+  document.querySelectorAll("input.opcoes").forEach((input) => {
+    if (input.checked) {
+      if (tipoDeProteina === "carne") {
+        const carne = carnes.find(({ id }) => id === input.id);
+        selecionados.push(carne);
+      }
+      if (tipoDeProteina === "vegetal") {
+        const vegetal = vegetais.find(({ id }) => id === input.id);
+        selecionados.push(vegetal);
+      }
+    }
+  });
+
+  return selecionados;
+}
+
 function calculoDePessoas() {
   const qtoHomens = document.querySelector("input#quantidade-homem").value;
   const qtoMulheres = document.querySelector("input#quantidade-mulher").value;
@@ -142,12 +161,45 @@ function calculoDePessoas() {
   );
 }
 
+function criarLista(resultado) {
+
+  let ul = document.getElementById("listaDeResultados");
+  const selecionados = proteinasSelecionadas()
+  const totalPorSelecionado = resultado / selecionados.length;
+    
+  if(ul) {
+    while (ul.hasChildNodes()) {
+      ul.removeChild(ul.firstChild);
+    } 
+    selecionados.forEach((proteina, index) => {
+      console.log(proteina, index);
+      const li = document.createElement("li");
+      li.textContent = `${proteina.label}: ${(resultado * proteina.weight).toFixed(0)}`
+      ul.appendChild(li)
+  });
+  } else {
+    ul = document.createElement("ul")
+    ul.id = "listaDeResultados"
+    
+    proteinasSelecionadas().forEach((proteina) => {
+      const li = document.createElement("li");
+      li.textContent = `${proteina.label}: ${(resultado * proteina.weight).toFixed(0)}`
+      ul.appendChild(li)
+  });
+
+  }
+  
+  document.getElementById("resultado").appendChild(ul);
+}
+
 function butao() {
+
   const pesoDasProteinas = calculoDePesoDasProteinas();
   const totalDePessoas = calculoDePessoas();
-
-  const resultado = 500 * pesoDasProteinas * totalDePessoas;
-
+  const resultado = 623 * pesoDasProteinas * totalDePessoas;
+  const resultadoTotal = 623 * totalDePessoas;
+  
+  criarLista(resultadoTotal);
   const resultadoFinal = document.getElementById("resultadoFinal");
-  resultadoFinal.innerHTML = resultado.toFixed(0) + " g";
+  resultadoFinal.innerHTML = resultadoTotal.toFixed(0) + " g";
 }
